@@ -4,7 +4,7 @@ cli-events defines a bounded, versioned JSON Lines protocol for one local CLI
 execution and provides a small reference runner, validator, and deterministic
 summarizer.
 
-Status: released v0.1.0.
+Status: 0.1.0 implementation pending release evidence.
 
 CI: https://github.com/joshiii-xyz/cli-events/actions
 
