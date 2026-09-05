@@ -4,7 +4,7 @@ cli-events defines a bounded, versioned JSON Lines protocol for one local CLI
 execution and provides a small reference runner, validator, and deterministic
 summarizer.
 
-Status: 0.1.0 implementation pending release evidence.
+Status: released v0.1.0.
 
 CI: https://github.com/joshiii-xyz/cli-events/actions
 
@@ -54,43 +54,3 @@ Use `cli-events --help` for the complete option list.
 - Exit code 2 means the CLI could not run the requested operation.
 
 Each event is limited to 64 KiB, each captured output stream to 8 MiB, and an
-execution to 4096 events. The runner applies a 60 second default timeout and
-supports cancellation with `--cancel-after-ms`.
-
-## Safety and data handling
-
-The runner reads only the requested child process output and the current
-working directory. It does not capture environment variables, upload data, or
-redact argv. Do not put credentials or other secrets in command arguments.
-Invalid UTF-8 output is represented with the replacement character.
-
-## Limits and non-goals
-
-See [`docs/limits.md`](docs/limits.md). This is not a general task runner,
-scheduler, shell, hosted service, or binary-output recorder. Linux is the
-primary tested platform.
-
-## Testing and development
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`docs/release.md`](docs/release.md)
-for the verified command set.
-
-## Research
-
-The design references Rust process APIs and [RFC
-8259](https://www.rfc-editor.org/rfc/rfc8259). See [`docs/research.md`](docs/research.md)
-for the source trail.
-
-## Release and support status
-
-The 0.1.0 release is pending local and hosted evidence. The release record
-will be updated only after the exact package, checksum, docs.rs, CI, security,
-CodeQL, tag package, and fresh-install checks pass.
-
-## Contributing
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-## License
-
-MIT. See [`LICENSE`](LICENSE).
